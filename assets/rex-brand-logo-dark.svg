@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" width="320" height="64" fill="none">
+  <defs>
+    <linearGradient id="rexBgGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="rexCyanGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="rexAmberGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left Icon Emblem (Hexagon) -->
+  <g transform="translate(4, 2)">
+    <polygon points="30,4 54,18 54,42 30,56 6,42 6,18" fill="url(#rexBgGradDark)" stroke="url(#rexCyanGradDark)" stroke-width="2.5" stroke-linejoin="round"/>
+    <!-- Circuit Lines -->
+    <path d="M16,30 L22,30 L26,22 L34,38 L38,30 L44,30" stroke="url(#rexCyanGradDark)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Microchip Core -->
+    <rect x="24" y="24" width="12" height="12" rx="2" fill="#0F172A" stroke="url(#rexAmberGradDark)" stroke-width="1.8"/>
+    <circle cx="30" cy="30" r="2.5" fill="#FBBF24"/>
+    <!-- Pins -->
+    <line x1="30" y1="14" x2="30" y2="20" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="30" y1="40" x2="30" y2="46" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Main Brand Typography (For Dark Background) -->
+  <text x="76" y="28" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="900" font-size="22" fill="#F8FAFC" letter-spacing="1.2">REX INSTITUTE</text>
+  <text x="77" y="44" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="700" font-size="9.5" fill="#38BDF8" letter-spacing="2.2">OF TECHNOLOGY • BHOPAL</text>
+  <text x="77" y="55" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="600" font-size="7.5" fill="#94A3B8" letter-spacing="1.5">CHIP-LEVEL LABS &amp; CISCO NETWORKING • ESTD. 2008</text>
+</svg>

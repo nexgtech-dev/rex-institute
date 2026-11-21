@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Rex Institute of Technology | Chip-Level Laptop, Mobile Repairing &amp; Cisco Networking Labs | M.P. Nagar, Bhopal</title>
+  <meta name="description" content="Rex Institute of Technology, Lajpat Bhawan, MP Nagar Zone-1, Bhopal. 15+ years of excellence in Chip-Level Laptop Motherboard Engineering, Cisco CCNA Networking, Smartphone Micro-Soldering, and 100% Practical Bench Labs.">
+
+  <link rel="icon" type="image/svg+xml" href="assets/rex-icon.svg">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'monospace', 'sans-serif'],
+          },
+          colors: {
+            tech: {
+              50: '#F0F9FF',
+              100: '#E0F2FE',
+              200: '#BAE6FD',
+              300: '#7DD3FC',
+              400: '#38BDF8',
+              500: '#0EA5E9',
+              600: '#0284C7',
+              700: '#0369A1',
+              800: '#075985',
+              900: '#0C4A6E',
+            },
+            amber: {
+              400: '#FBBF24',
+              500: '#F59E0B',
+              600: '#D97706',
+            },
+            carbon: {
+              800: '#1E293B',
+              900: '#0F172A',
+              950: '#090D16'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Technical Glow & Styling */
+    .glow-cyan {
+      box-shadow: 0 0 25px -5px rgba(2, 132, 199, 0.4);
+    }
+    .circuit-pattern {
+      background-image: radial-gradient(rgba(14, 165, 233, 0.12) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .badge-circuit {
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.15), rgba(15, 23, 42, 0.8));
+      border: 1px solid rgba(56, 189, 248, 0.35);
+    }
+    .card-tech-border {
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-tech-border:hover {
+      border-color: #0284C7;
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px -10px rgba(2, 132, 199, 0.15);
+    }
+    /* Modal backdrop fade */
+    .modal-backdrop {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(6px);
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0F172A;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #0284C7;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-tech-500 selection:text-white">
+
+  <!-- ========================================================================= -->
+  <!-- 1. DYNAMIC TOP ADMISSIONS COUNTDOWN RIBBON (72-Hour Beacon)              -->
+  <!-- ========================================================================= -->
+  <div id="countdownRibbon" class="bg-carbon-950 text-white border-b border-tech-500/30 py-2.5 px-4 text-xs sm:text-sm font-medium tracking-wide sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div class="flex items-center gap-2 text-center sm:text-left">
+        <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-amber-500 text-carbon-950 uppercase tracking-wider animate-pulse">
+          ⚡ Batch Admissions Open
+        </span>
+        <span>
+          Weekend &amp; Regular Batches (MP Nagar Zone-1 Campus). Only <strong class="text-amber-400">4 Workstations Remaining</strong>!
+        </span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-slate-400 text-xs hidden md:inline">Admissions Window Closes In:</span>
+        <div class="flex items-center gap-1.5 font-mono font-bold text-amber-400 text-xs sm:text-sm bg-carbon-900/90 px-3 py-1 rounded border border-tech-500/20">
+          <span id="beaconHours">71</span>h :
+          <span id="beaconMins">58</span>m :
+          <span id="beaconSecs">44</span>s
+        </div>
+        <a href="#demoWizard" class="text-xs bg-tech-600 hover:bg-tech-500 text-white font-semibold px-2.5 py-1 rounded transition">
+          Claim Seat &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 2. UNIFIED STICKY TECHNICAL HEADER WITH VECTOR SVG EMBLEM                 -->
+  <!-- ========================================================================= -->
+  <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-[41px] sm:top-[45px] z-40 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Vector Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group focus:outline-none" aria-label="Rex Institute of Technology Home">
+        <img src="assets/rex-brand-logo.svg" alt="Rex Institute of Technology Bhopal" class="h-12 w-auto max-w-[280px] sm:max-w-[320px]">
+      </a>
+
+      <!-- Desktop 15px Bold Navigation -->
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-medium text-slate-700 whitespace-nowrap">
+        <a href="#courses" class="hover:text-tech-600 transition-colors">Courses</a>
+        <a href="#labAmbience" class="hover:text-tech-600 transition-colors">Hardware Labs</a>
+        <a href="#curriculum" class="hover:text-tech-600 transition-colors">Curriculum</a>
+        <a href="#placements" class="hover:text-tech-600 transition-colors">Placements</a>
+        <a href="#faq" class="hover:text-tech-600 transition-colors">Admissions FAQ</a>
+      </nav>
+
+      <!-- Direct Action Buttons -->
+      <div class="hidden sm:flex items-center gap-3">
+        <!-- Direct Phone Dialer -->
+        <a href="tel:+919893266819" class="flex items-center gap-2 px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-tech-600 bg-slate-100 hover:bg-slate-200/80 rounded-lg transition border border-slate-200">
+          <i data-lucide="phone-call" class="w-4 h-4 text-tech-600"></i>
+          <span>+91 98932 66819</span>
+        </a>
+        <!-- CTA -->
+        <a href="#demoWizard" class="flex items-center gap-2 px-5 py-2.5 text-sm font-bold text-white bg-tech-600 hover:bg-tech-700 rounded-lg shadow-sm hover:shadow-md transition">
+          <i data-lucide="sparkles" class="w-4 h-4 text-amber-300"></i>
+          <span>Book Free Demo Class</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="flex items-center gap-2 lg:hidden">
+        <a href="tel:+919893266819" class="p-2 text-tech-600 bg-tech-50 rounded-lg border border-tech-200 sm:hidden" aria-label="Call Director">
+          <i data-lucide="phone" class="w-5 h-5"></i>
+        </a>
+        <button id="mobileMenuBtn" type="button" class="p-2.5 rounded-lg text-slate-700 hover:text-tech-600 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation Menu">
+          <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu (lg:hidden) -->
+    <div id="mobileDrawer" class="hidden lg:hidden border-t border-slate-200 bg-white/98 px-5 pt-3 pb-6 space-y-3 shadow-xl">
+      <nav class="flex flex-col space-y-2 text-base font-bold text-slate-700">
+        <a href="#courses" class="py-2 px-3 rounded-lg hover:bg-slate-100 flex items-center justify-between" onclick="closeMobileDrawer()">
+          <span>Featured Courses</span>
+          <span class="text-xs font-semibold text-amber-600 bg-amber-50 px-2 py-0.5 rounded">High-Ticket</span>
+        </a>
+        <a href="#labAmbience" class="py-2 px-3 rounded-lg hover:bg-slate-100" onclick="closeMobileDrawer()">Hardware Lab Ambience</a>
+        <a href="#curriculum" class="py-2 px-3 rounded-lg hover:bg-slate-100" onclick="closeMobileDrawer()">Syllabus &amp; Modules</a>
+        <a href="#testimonials" class="py-2 px-3 rounded-lg hover:bg-slate-100" onclick="closeMobileDrawer()">Alumni Testimonials</a>
+        <a href="#faq" class="py-2 px-3 rounded-lg hover:bg-slate-100" onclick="closeMobileDrawer()">Frequently Asked Questions</a>
+      </nav>
+      <div class="pt-3 border-t border-slate-200 space-y-2.5">
+        <a href="tel:+919893266819" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-slate-100 text-slate-800 font-bold text-sm">
+          <i data-lucide="phone" class="w-4 h-4 text-tech-600"></i>
+          <span>Call Helpline: +91 98932 66819</span>
+        </a>
+        <a href="#demoWizard" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-tech-600 text-white font-bold text-sm shadow" onclick="closeMobileDrawer()">
+          <i data-lucide="calendar-check" class="w-4 h-4 text-amber-300"></i>
+          <span>Reserve 2-Day Free Demo Seat</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 3. HERO COMMAND CENTER & LIVE STUDENT ENROLLMENT DESK                     -->
+  <!-- ========================================================================= -->
+  <section class="relative bg-gradient-to-b from-slate-900 via-carbon-900 to-carbon-950 text-white pt-16 pb-24 overflow-hidden circuit-pattern">
+    <!-- Atmospheric Ambient Glows -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-tech-600/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/2 -right-32 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Copy -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full badge-circuit text-xs font-semibold text-tech-300">
+            <span class="flex h-2 w-2 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tech-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-tech-500"></span>
+            </span>
+            <span>MP NAGAR ZONE-1 • CHIP-LEVEL LABS &amp; CISCO ACADEMY</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.15] text-white">
+            Master Advanced <span class="text-transparent bg-clip-text bg-gradient-to-r from-tech-400 via-sky-300 to-amber-300">Chip-Level Hardware</span> &amp; Cisco Networking in Bhopal.
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+            Stop relying on surface-level YouTube tutorials. Train at <strong>Rex Institute</strong> on live 4K DSO oscilloscopes, BGA rework stations, schematic tracing rigs, and enterprise Cisco racks. Graduate as an in-demand hardware engineer or start your own high-profit service center.
+          </p>
+
+          <!-- Key Metrics Badges -->
+          <div class="grid grid-cols-3 gap-3 pt-2 max-w-lg">
+            <div class="bg-carbon-800/80 border border-slate-700/60 p-3 rounded-xl text-center">
+              <div class="text-2xl font-black text-amber-400 font-mono">15+</div>
+              <div class="text-[11px] text-slate-400 font-medium">Years in MP Nagar</div>
+            </div>
+            <div class="bg-carbon-800/80 border border-slate-700/60 p-3 rounded-xl text-center">
+              <div class="text-2xl font-black text-tech-400 font-mono">10,000+</div>
+              <div class="text-[11px] text-slate-400 font-medium">Technicians Placed</div>
+            </div>
+            <div class="bg-carbon-800/80 border border-slate-700/60 p-3 rounded-xl text-center">
+              <div class="text-2xl font-black text-emerald-400 font-mono">100%</div>
+              <div class="text-[11px] text-slate-400 font-medium">Practical Lab Work</div>
+            </div>
+          </div>
+
+          <!-- Direct CTAs -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+            <a href="#demoWizard" class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 text-base font-bold text-carbon-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 rounded-xl shadow-lg hover:shadow-amber-500/25 transition">
+              <i data-lucide="book-open-check" class="w-5 h-5 text-carbon-950"></i>
+              <span>Book Free 2-Day Demo Class</span>
+            </a>
+            
+            <a href="https://wa.me/919893266819?text=Namaskar%20Rex%20Institute,%20I%20am%20interested%20in%20learning%20more%20about%20your%20Laptop%20Chip-Level%20and%20Networking%20courses." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-base font-bold text-white bg-carbon-800 hover:bg-carbon-700 border border-slate-700 rounded-xl transition">
+              <i data-lucide="message-circle" class="w-5 h-5 text-emerald-400"></i>
+              <span>WhatsApp Inquiry</span>
+            </a>
+          </div>
+
+          <!-- Micro Location Assurance -->
+          <div class="flex items-center gap-2 text-xs text-slate-400 pt-1">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-tech-400"></i>
+            <span>Plot No. 04, Lajpat Bhawan Building, Near HDFC Bank, Zone-1, M.P. Nagar, Bhopal</span>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Live Interactive Desk / Visual Showcase -->
+        <div class="lg:col-span-5">
+          <div class="bg-gradient-to-b from-carbon-800/90 to-carbon-900/95 border border-slate-700 rounded-2xl p-5 shadow-2xl relative glow-cyan">
+            
+            <!-- Floating Badge -->
+            <div class="absolute -top-3.5 right-6 bg-gradient-to-r from-tech-600 to-tech-500 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow">
+              Live Enrollment Desk
+            </div>
+
+            <div class="space-y-4">
+              <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
+                <div class="w-10 h-10 rounded-lg bg-tech-500/20 flex items-center justify-center text-tech-400 font-bold">
+                  <i data-lucide="cpu" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="text-sm font-bold text-white">Upcoming Morning &amp; Evening Batches</h3>
+                  <p class="text-xs text-slate-400">Individual Bench Workstation Assigned per Student</p>
+                </div>
+              </div>
+
+              <!-- Workstation Live Snapshot Image -->
+              <div class="relative rounded-xl overflow-hidden border border-slate-700 aspect-video">
+                <img src="assets/rex-laptop-motherboard.jpg" alt="Motherboard Chip Level Testing Lab" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-carbon-950 via-transparent to-transparent"></div>
+                <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-xs text-white">
+                  <span class="bg-carbon-950/80 px-2 py-0.5 rounded font-mono text-[11px] text-tech-300">
+                    🔬 DSO Oscilloscope Lab Bench
+                  </span>
+                  <span class="bg-emerald-500/90 text-white font-bold px-2 py-0.5 rounded text-[11px]">
+                    Bench Ready
+                  </span>
+                </div>
+              </div>
+
+              <!-- Quick Intake Selector Preview -->
+              <div class="space-y-2.5 pt-1">
+                <div class="flex items-center justify-between text-xs text-slate-300">
+                  <span class="font-medium">Direct Admissions Helpline:</span>
+                  <a href="tel:+919893266819" class="font-bold text-amber-400 hover:underline">+91 98932 66819</a>
+                </div>
+                <div class="flex items-center justify-between text-xs text-slate-300">
+                  <span class="font-medium">Free Demo Class:</span>
+                  <span class="text-emerald-400 font-semibold">2 Consecutive Hands-On Days</span>
+                </div>
+                <div class="flex items-center justify-between text-xs text-slate-300">
+                  <span class="font-medium">Tools Included:</span>
+                  <span class="text-tech-300 font-semibold">Individual Tool Kit + Schematics</span>
+                </div>
+              </div>
+
+              <a href="#demoWizard" class="block w-full text-center py-2.5 px-4 bg-tech-600 hover:bg-tech-500 text-white font-bold text-sm rounded-lg transition shadow">
+                Check Seat Availability in MP Nagar &rarr;
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 4. TRUST STRIP & ACCREDITATION BADGES                                     -->
+  <!-- ========================================================================= -->
+  <section class="bg-white border-b border-slate-200 py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left divide-y md:divide-y-0 md:divide-x divide-slate-100">
+        
+        <div class="pt-3 md:pt-0 md:px-4 flex items-center gap-3 justify-center md:justify-start">
+          <div class="w-10 h-10 rounded-lg bg-tech-50 flex items-center justify-center text-tech-600 shrink-0">
+            <i data-lucide="award" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-slate-900">15+ Years in MP Nagar</h4>
+            <p class="text-xs text-slate-500">Lajpat Bhawan pioneer since 2008</p>
+          </div>
+        </div>
+
+        <div class="pt-3 md:pt-0 md:px-4 flex items-center gap-3 justify-center md:justify-start">
+          <div class="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 shrink-0">
+            <i data-lucide="users" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-slate-900">10,000+ Alumni</h4>
+            <p class="text-xs text-slate-500">Working in MNCs &amp; independent labs</p>
+          </div>
+        </div>
+
+        <div class="pt-3 md:pt-0 md:px-4 flex items-center gap-3 justify-center md:justify-start">
+          <div class="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center text-amber-600 shrink-0">
+            <i data-lucide="wrench" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-slate-900">100% Practical Labs</h4>
+            <p class="text-xs text-slate-500">Dedicated multimeter &amp; DSO bench</p>
+          </div>
+        </div>
+
+        <div class="pt-3 md:pt-0 md:px-4 flex items-center gap-3 justify-center md:justify-start">
+          <div class="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center text-purple-600 shrink-0">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-slate-900">ISO 9001:2015 Certified</h4>
+            <p class="text-xs text-slate-500">Industry-recognized certification</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 5. FEATURED HIGH-TICKET SPECIALTY COURSE CARDS                            -->
+  <!-- ========================================================================= -->
+  <section id="courses" class="py-20 bg-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-tech-100 text-tech-800 uppercase tracking-wider">
+          💎 Career-Launch Programs
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-3">
+          High-Ticket Flagship Certifications
+        </h2>
+        <p class="text-base text-slate-600 mt-3">
+          Industry-grade vocational engineering courses engineered to yield high-paying tech jobs or launch high-margin service enterprises.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Flagship 1: Laptop & Chip-Level Motherboard -->
+        <div class="bg-white rounded-2xl overflow-hidden card-tech-border shadow-sm flex flex-col justify-between">
+          <div>
+            <!-- Image & Badge -->
+            <div class="relative h-52 overflow-hidden bg-slate-900">
+              <img src="assets/rex-laptop-motherboard.jpg" alt="Laptop Motherboard Repairing" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
+              <div class="absolute top-3 left-3 bg-amber-500 text-slate-950 text-xs font-extrabold px-2.5 py-1 rounded uppercase tracking-wider">
+                Most In-Demand
+              </div>
+              <div class="absolute bottom-3 left-3 right-3 text-white flex items-end justify-between">
+                <div>
+                  <span class="text-xs font-mono text-tech-300 block">SPECIALTY 01</span>
+                  <h3 class="text-lg font-bold leading-snug">Laptop Chip-Level Motherboard Engineering</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 space-y-4">
+              <div class="flex items-center justify-between text-xs pb-3 border-b border-slate-100">
+                <span class="text-slate-500">Duration: <strong class="text-slate-800">3 – 4 Months</strong></span>
+                <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded">Daily 2 Hrs Lab</span>
+              </div>
+
+              <div class="space-y-2">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Key Syllabus Competencies:</h4>
+                <ul class="text-sm text-slate-700 space-y-1.5">
+                  <li class="flex items-start gap-2">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-tech-600 shrink-0 mt-0.5"></i>
+                    <span>Schematic diagram reading &amp; board-view tracing</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-tech-600 shrink-0 mt-0.5"></i>
+                    <span>DSO Oscilloscope clock &amp; data waveform analysis</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-tech-600 shrink-0 mt-0.5"></i>
+                    <span>VRM section, 3.3V/5V ALW &amp; RAM power sequence</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-tech-600 shrink-0 mt-0.5"></i>
+                    <span>BGA rework, BIOS reprogramming &amp; ME clean</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                <div class="text-xs text-slate-500">Estimated Tuition Bracket:</div>
+                <div class="text-xl font-extrabold text-slate-900 font-mono">
+                  ₹18,000 – ₹28,000
+                </div>
+                <div class="text-[11px] text-tech-700 font-medium">Includes individual test kit &amp; schematic library</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0 space-y-2">
+            <button onclick="openTipModal('laptop')" class="w-full py-2.5 px-4 text-sm font-bold text-tech-700 hover:text-white bg-tech-50 hover:bg-tech-600 rounded-lg transition border border-tech-200">
+              Download Syllabus PDF &rarr;
+            </button>
+            <a href="#demoWizard" class="w-full block text-center py-2.5 px-4 text-sm font-bold text-white bg-carbon-900 hover:bg-carbon-800 rounded-lg transition">
+              Book Free Demo Lab
+            </a>
+          </div>
+        </div>
+
+        <!-- Flagship 2: Cisco CCNA & Enterprise Cloud Networking -->
+        <div class="bg-white rounded-2xl overflow-hidden card-tech-border shadow-sm flex flex-col justify-between">
+          <div>
+            <!-- Image & Badge -->
+            <div class="relative h-52 overflow-hidden bg-slate-900">
+              <img src="assets/rex-cisco-networking.jpg" alt="Cisco Networking Laboratory" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
+              <div class="absolute top-3 left-3 bg-tech-500 text-white text-xs font-extrabold px-2.5 py-1 rounded uppercase tracking-wider">
+                IT MNC Career
+              </div>
+              <div class="absolute bottom-3 left-3 right-3 text-white flex items-end justify-between">
+                <div>
+                  <span class="text-xs font-mono text-amber-300 block">SPECIALTY 02</span>
+                  <h3 class="text-lg font-bold leading-snug">Cisco CCNA &amp; Cloud Network Specialist</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 space-y-4">
+              <div class="flex items-center justify-between text-xs pb-3 border-b border-slate-100">
+                <span class="text-slate-500">Duration: <strong class="text-slate-800">2.5 – 3.5 Months</strong></span>
+                <span class="bg-blue-50 text-blue-700 font-bold px-2 py-0.5 rounded">Cisco 200-301</span>
+              </div>
+
+              <div class="space-y-2">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Key Syllabus Competencies:</h4>
+                <ul class="text-sm text-slate-700 space-y-1.5">
+                  <li class="flex items-start gap-2">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-tech-600 shrink-0 mt-0.5"></i>
+                    <span>IPv4/IPv6 VLSM subnetting &amp; Cisco IOS CLI</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-tech-600 shrink-0 mt-0.5"></i>
+                    <span>OSPFv2/v3, EIGRP, BGP enterprise routing</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-tech-600 shrink-0 mt-0.5"></i>
+                    <span>VLANs, Inter-VLAN routing, STP, EtherChannel</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-tech-600 shrink-0 mt-0.5"></i>
+                    <span>Network security, ACLs, NAT, Python network automation</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                <div class="text-xs text-slate-500">Estimated Tuition Bracket:</div>
+                <div class="text-xl font-extrabold text-slate-900 font-mono">
+                  ₹15,000 – ₹25,000
+                </div>
+                <div class="text-[11px] text-tech-700 font-medium">Includes real rack hardware access + Packet Tracer rigs</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0 space-y-2">
+            <button onclick="openTipModal('ccna')" class="w-full py-2.5 px-4 text-sm font-bold text-tech-700 hover:text-white bg-tech-50 hover:bg-tech-600 rounded-lg transition border border-tech-200">
+              Download Syllabus PDF &rarr;
+            </button>
+            <a href="#demoWizard" class="w-full block text-center py-2.5 px-4 text-sm font-bold text-white bg-carbon-900 hover:bg-carbon-800 rounded-lg transition">
+              Book Free Demo Lab
+            </a>
+          </div>
+        </div>
+
+        <!-- Flagship 3: Smartphone & Micro-Soldering Lab -->
+        <div class="bg-white rounded-2xl overflow-hidden card-tech-border shadow-sm flex flex-col justify-between">
+          <div>
+            <!-- Image & Badge -->
+            <div class="relative h-52 overflow-hidden bg-slate-900">
+              <img src="assets/rex-smartphone-microsoldering.jpg" alt="Smartphone Micro-Soldering" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
+              <div class="absolute top-3 left-3 bg-purple-600 text-white text-xs font-extrabold px-2.5 py-1 rounded uppercase tracking-wider">
+                Microscope Bench
+              </div>
+              <div class="absolute bottom-3 left-3 right-3 text-white flex items-end justify-between">
+                <div>
+                  <span class="text-xs font-mono text-emerald-300 block">SPECIALTY 03</span>
+                  <h3 class="text-lg font-bold leading-snug">Advanced Smartphone &amp; Micro-Soldering</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 space-y-4">
+              <div class="flex items-center justify-between text-xs pb-3 border-b border-slate-100">
+                <span class="text-slate-500">Duration: <strong class="text-slate-800">2 – 3 Months</strong></span>
+                <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded">iPhone &amp; 5G Android</span>
+              </div>
+
+              <div class="space-y-2">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Key Syllabus Competencies:</h4>
+                <ul class="text-sm text-slate-700 space-y-1.5">
+                  <li class="flex items-start gap-2">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-tech-600 shrink-0 mt-0.5"></i>
+                    <span>Stereoscopic microscope SMD &amp; BGA reballing</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-tech-600 shrink-0 mt-0.5"></i>
+                    <span>CPU / eMMC / UFS IC replacement &amp; glue cleaning</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-tech-600 shrink-0 mt-0.5"></i>
+                    <span>Jumper wire microscopic tracing under solder mask</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-tech-600 shrink-0 mt-0.5"></i>
+                    <span>UFI, EasyJTAG software flashing &amp; dead boot recovery</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                <div class="text-xs text-slate-500">Estimated Tuition Bracket:</div>
+                <div class="text-xl font-extrabold text-slate-900 font-mono">
+                  ₹12,000 – ₹20,000
+                </div>
+                <div class="text-[11px] text-tech-700 font-medium">Includes precision microscope workbench access</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0 space-y-2">
+            <button onclick="openTipModal('smartphone')" class="w-full py-2.5 px-4 text-sm font-bold text-tech-700 hover:text-white bg-tech-50 hover:bg-tech-600 rounded-lg transition border border-tech-200">
+              Download Syllabus PDF &rarr;
+            </button>
+            <a href="#demoWizard" class="w-full block text-center py-2.5 px-4 text-sm font-bold text-white bg-carbon-900 hover:bg-carbon-800 rounded-lg transition">
+              Book Free Demo Lab
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 6. COMPREHENSIVE CURRICULUM GRID WITH CATEGORY FILTER                     -->
+  <!-- ========================================================================= -->
+  <section id="curriculum" class="py-20 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-xs font-bold text-tech-600 uppercase tracking-wider">Vocational Engineering Curriculum</span>
+          <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-1">Full Course Directory</h2>
+          <p class="text-slate-600 text-sm mt-1">Select a category to filter Rex Institute's industry modules.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap gap-2" id="filterTabs">
+          <button onclick="filterServices('all', this)" class="filter-tab px-4 py-2 rounded-lg text-xs font-bold bg-tech-600 text-white shadow-sm transition">
+            All Courses
+          </button>
+          <button onclick="filterServices('laptop', this)" class="filter-tab px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+            Laptop &amp; Motherboard
+          </button>
+          <button onclick="filterServices('networking', this)" class="filter-tab px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+            Cisco &amp; Networking
+          </button>
+          <button onclick="filterServices('mobile', this)" class="filter-tab px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+            Smartphone Micro-Soldering
+          </button>
+          <button onclick="filterServices('tv', this)" class="filter-tab px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+            Smart TV &amp; Power Electronics
+          </button>
+        </div>
+      </div>
+
+      <!-- Course Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="servicesGrid">
+        
+        <!-- Course 1 -->
+        <div class="service-card p-6 rounded-xl border border-slate-200 hover:border-tech-500 bg-white transition space-y-4 shadow-sm" data-category="laptop">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded text-[11px] font-bold bg-amber-100 text-amber-800 uppercase">Motherboard</span>
+            <span class="text-xs font-mono font-bold text-tech-600">3 Months</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">Advanced Laptop Chip-Level Diagnostics</h3>
+            <p class="text-xs text-slate-500 mt-1">Covers power rails, RTC section, charging ICs, thermal cameras, and short killer diagnostics.</p>
+          </div>
+          <div class="text-xs text-slate-600 space-y-1 font-mono">
+            <div>• Tools: DSO 100MHz + Hot Air + Multimeter</div>
+            <div>• Practicals: 120+ Real Customer Motherboards</div>
+          </div>
+          <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-sm font-bold text-slate-900">₹18,000 – ₹28,000</span>
+            <button onclick="openTipModal('laptop')" class="text-xs text-tech-600 font-bold hover:underline">View Syllabus &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="service-card p-6 rounded-xl border border-slate-200 hover:border-tech-500 bg-white transition space-y-4 shadow-sm" data-category="networking">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded text-[11px] font-bold bg-blue-100 text-blue-800 uppercase">Cisco Academy</span>
+            <span class="text-xs font-mono font-bold text-tech-600">3 Months</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">Cisco CCNA (200-301) Certification Track</h3>
+            <p class="text-xs text-slate-500 mt-1">Configure Cisco switches, routers, VLANs, OSPF, ACLs, and enterprise infrastructure security.</p>
+          </div>
+          <div class="text-xs text-slate-600 space-y-1 font-mono">
+            <div>• Racks: Cisco Catalyst 2960 &amp; 1941 Routers</div>
+            <div>• Labs: 100% Real Hardware Command Line</div>
+          </div>
+          <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-sm font-bold text-slate-900">₹15,000 – ₹25,000</span>
+            <button onclick="openTipModal('ccna')" class="text-xs text-tech-600 font-bold hover:underline">View Syllabus &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="service-card p-6 rounded-xl border border-slate-200 hover:border-tech-500 bg-white transition space-y-4 shadow-sm" data-category="mobile">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded text-[11px] font-bold bg-purple-100 text-purple-800 uppercase">Micro-Soldering</span>
+            <span class="text-xs font-mono font-bold text-tech-600">2.5 Months</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">Advanced Smartphone &amp; iPhone Repair</h3>
+            <p class="text-xs text-slate-500 mt-1">Master CPU double-decker reballing, sandwich motherboard separation, and optical microscope jumpers.</p>
+          </div>
+          <div class="text-xs text-slate-600 space-y-1 font-mono">
+            <div>• Stations: Trinocular Microscope + Quick 861DW</div>
+            <div>• Scope: Android 5G, Qualcomm, MediaTek, iOS</div>
+          </div>
+          <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-sm font-bold text-slate-900">₹12,000 – ₹20,000</span>
+            <button onclick="openTipModal('smartphone')" class="text-xs text-tech-600 font-bold hover:underline">View Syllabus &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Course 4 -->
+        <div class="service-card p-6 rounded-xl border border-slate-200 hover:border-tech-500 bg-white transition space-y-4 shadow-sm" data-category="tv">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded text-[11px] font-bold bg-emerald-100 text-emerald-800 uppercase">Power Electronics</span>
+            <span class="text-xs font-mono font-bold text-tech-600">1.5 Months</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">Smart LED / OLED TV &amp; SMPS Engineering</h3>
+            <p class="text-xs text-slate-500 mt-1">Diagnose backlight inverter circuits, T-Con timing controller signals, and COF bonding panel repairs.</p>
+          </div>
+          <div class="text-xs text-slate-600 space-y-1 font-mono">
+            <div>• Coverage: Sony, Samsung, LG, Mi Smart TVs</div>
+            <div>• Modules: Power Supply SMPS &amp; Motherboard</div>
+          </div>
+          <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-sm font-bold text-slate-900">₹10,000 – ₹16,000</span>
+            <button onclick="openTipModal('tv')" class="text-xs text-tech-600 font-bold hover:underline">View Syllabus &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Course 5 -->
+        <div class="service-card p-6 rounded-xl border border-slate-200 hover:border-tech-500 bg-white transition space-y-4 shadow-sm" data-category="networking">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded text-[11px] font-bold bg-blue-100 text-blue-800 uppercase">Server Infra</span>
+            <span class="text-xs font-mono font-bold text-tech-600">2 Months</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">Linux Server Admin &amp; Network Security</h3>
+            <p class="text-xs text-slate-500 mt-1">RHEL administration, Apache/Nginx web servers, SSH hardening, firewalls, and cyber fundamentals.</p>
+          </div>
+          <div class="text-xs text-slate-600 space-y-1 font-mono">
+            <div>• Environment: Red Hat Enterprise Linux &amp; Ubuntu</div>
+            <div>• Focus: IT Infrastructure &amp; Data Centers</div>
+          </div>
+          <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-sm font-bold text-slate-900">₹14,000 – ₹22,000</span>
+            <button onclick="openTipModal('linux')" class="text-xs text-tech-600 font-bold hover:underline">View Syllabus &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Course 6 -->
+        <div class="service-card p-6 rounded-xl border border-slate-200 hover:border-tech-500 bg-white transition space-y-4 shadow-sm" data-category="laptop">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded text-[11px] font-bold bg-amber-100 text-amber-800 uppercase">Micro-Controller</span>
+            <span class="text-xs font-mono font-bold text-tech-600">1 Month</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">BIOS Programming &amp; SIO Chip Masterclass</h3>
+            <p class="text-xs text-slate-500 mt-1">EC/KBC programming (ENE, ITE, Nuvoton), RT809F/RT809H programmers, clean Intel ME regions.</p>
+          </div>
+          <div class="text-xs text-slate-600 space-y-1 font-mono">
+            <div>• Equipment: RT809H Universal Programmer</div>
+            <div>• Practicals: Dell, HP, Lenovo, Asus BIOS</div>
+          </div>
+          <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-sm font-bold text-slate-900">₹8,000 – ₹14,000</span>
+            <button onclick="openTipModal('bios')" class="text-xs text-tech-600 font-bold hover:underline">View Syllabus &rarr;</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 7. HARDWARE LAB AMBIENCE & WORKSTATION GALLERY                            -->
+  <!-- ========================================================================= -->
+  <section id="labAmbience" class="py-20 bg-slate-900 text-white circuit-pattern">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-12">
+        <span class="text-xs font-bold text-tech-400 uppercase tracking-wider">MP Nagar Benchmark Labs</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-2">
+          Inside Our Precision Engineering &amp; Cisco Racks
+        </h2>
+        <p class="text-slate-300 text-base mt-3">
+          Every student at Rex Institute receives their own dedicated workbench equipped with industrial tools, preventing crowded observation and ensuring 100% muscle memory.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- Lab Photo 1 -->
+        <div class="group relative rounded-xl overflow-hidden border border-slate-700 bg-carbon-800 aspect-[4/3]">
+          <img src="assets/rex-hardware-lab-ambience.jpg" alt="Rex Institute Electronics Laboratory Ambience" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+          <div class="absolute bottom-3 left-3 right-3">
+            <span class="text-[10px] font-mono text-amber-400 uppercase">Bench Station 01</span>
+            <h4 class="text-sm font-bold text-white">Advanced DSO Waveform Bench</h4>
+          </div>
+        </div>
+
+        <!-- Lab Photo 2 -->
+        <div class="group relative rounded-xl overflow-hidden border border-slate-700 bg-carbon-800 aspect-[4/3]">
+          <img src="assets/rex-soldering-workstation.jpg" alt="SMD Rework & Soldering Workstation" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+          <div class="absolute bottom-3 left-3 right-3">
+            <span class="text-[10px] font-mono text-tech-400 uppercase">Bench Station 02</span>
+            <h4 class="text-sm font-bold text-white">SMD Rework &amp; BGA Station</h4>
+          </div>
+        </div>
+
+        <!-- Lab Photo 3 -->
+        <div class="group relative rounded-xl overflow-hidden border border-slate-700 bg-carbon-800 aspect-[4/3]">
+          <img src="assets/rex-student-practical.jpg" alt="Student Hardware Testing Practical" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+          <div class="absolute bottom-3 left-3 right-3">
+            <span class="text-[10px] font-mono text-emerald-400 uppercase">Student Lab Work</span>
+            <h4 class="text-sm font-bold text-white">Live Fault-Finding on Motherboard</h4>
+          </div>
+        </div>
+
+        <!-- Lab Photo 4 -->
+        <div class="group relative rounded-xl overflow-hidden border border-slate-700 bg-carbon-800 aspect-[4/3]">
+          <img src="assets/rex-placement-corporate.jpg" alt="Corporate Placement & IT Support" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+          <div class="absolute bottom-3 left-3 right-3">
+            <span class="text-[10px] font-mono text-purple-400 uppercase">Placement Ready</span>
+            <h4 class="text-sm font-bold text-white">Enterprise NOC &amp; IT Support</h4>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Live Lab Protocol Banner -->
+      <div class="mt-10 p-5 rounded-2xl bg-carbon-800/80 border border-slate-700 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-tech-500/20 text-tech-400 flex items-center justify-center shrink-0">
+            <i data-lucide="layers" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-white">Want to inspect our lab before taking admission?</h4>
+            <p class="text-xs text-slate-400">Walk into Lajpat Bhawan, MP Nagar Zone-1 and attend an active batch.</p>
+          </div>
+        </div>
+        <a href="https://wa.me/919893266819?text=Namaskar%20Director%20Rex%20Institute,%20I%20would%20like%20to%20visit%20your%20MP%20Nagar%20lab%20this%20week." target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-lg bg-tech-600 hover:bg-tech-500 text-white font-bold text-xs uppercase tracking-wider transition shrink-0">
+          Schedule Campus Visit &rarr;
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 8. VERIFIED ALUMNI TESTIMONIALS (MP Nagar, Indrapuri, Ayodhya Bypass)     -->
+  <!-- ========================================================================= -->
+  <section id="testimonials" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-bold text-tech-600 uppercase tracking-wider">Proven Student Outcomes</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-2">
+          Verified Alumni Stories from Bhopal &amp; MP
+        </h2>
+        <p class="text-slate-600 text-base mt-2">
+          From beginners with zero electronics knowledge to thriving hardware entrepreneurs and network administrators.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Review 1: MP Nagar -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex text-amber-400">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <span class="text-[11px] font-mono text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded">Verified Alumni</span>
+          </div>
+          <p class="text-sm text-slate-700 leading-relaxed italic">
+            "Before joining Rex Institute, I only knew how to assemble desktop PCs. Sir taught me how to read schematic circuits and measure voltage rails with DSO oscilloscopes. Today I run my own laptop chip-level repair lab in MP Nagar Zone-2 earning ₹60,000+ per month!"
+          </p>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <div class="text-sm font-bold text-slate-900">Rahul Vishwakarma</div>
+              <div class="text-xs text-slate-500">Laptop Chip-Level Batch • MP Nagar Zone-2</div>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-tech-100 text-tech-700 font-bold text-xs flex items-center justify-center">
+              RV
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2: Indrapuri -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex text-amber-400">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <span class="text-[11px] font-mono text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded">Verified Alumni</span>
+          </div>
+          <p class="text-sm text-slate-700 leading-relaxed italic">
+            "Completed Cisco CCNA 200-301 training under Rex Institute faculty. What makes them unique is their physical Cisco switch and router racks. Cracking technical interviews at IT MNCs was straightforward because we practiced real CLI troubleshooting."
+          </p>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <div class="text-sm font-bold text-slate-900">Aditya Sharma</div>
+              <div class="text-xs text-slate-500">Cisco CCNA Track • Indrapuri Sector A</div>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-bold text-xs flex items-center justify-center">
+              AS
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3: Ayodhya Bypass -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex text-amber-400">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <span class="text-[11px] font-mono text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded">Verified Alumni</span>
+          </div>
+          <p class="text-sm text-slate-700 leading-relaxed italic">
+            "Smartphone micro-soldering requires real patience and a trinocular microscope. Rex Institute gives individual stations to every student. I learned double-decker CPU reballing and recovered dead iPhones with full confidence."
+          </p>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <div class="text-sm font-bold text-slate-900">Mohd. Sameer Khan</div>
+              <div class="text-xs text-slate-500">Mobile Micro-Soldering • Ayodhya Bypass</div>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 font-bold text-xs flex items-center justify-center">
+              MK
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 4: Kolar Road -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex text-amber-400">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <span class="text-[11px] font-mono text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded">Verified Alumni</span>
+          </div>
+          <p class="text-sm text-slate-700 leading-relaxed italic">
+            "I traveled from Kolar Road daily because no other coaching in Bhopal has 15 years of continuous lab legacy like Rex Institute in Lajpat Bhawan. Their faculty gives lifetime technical backup even after you complete the batch!"
+          </p>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <div class="text-sm font-bold text-slate-900">Deepak Malviya</div>
+              <div class="text-xs text-slate-500">Smart TV &amp; SMPS Course • Kolar Road</div>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs flex items-center justify-center">
+              DM
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 5: Hoshangabad / Sehore Commuter -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex text-amber-400">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <span class="text-[11px] font-mono text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded">Verified Alumni</span>
+          </div>
+          <p class="text-sm text-slate-700 leading-relaxed italic">
+            "Best technical training center in Central India. The batch timing was flexible enough for outstation students. The practical troubleshooting tricks on Dell and HP motherboard power rails paid back my course fee within 1 month."
+          </p>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <div class="text-sm font-bold text-slate-900">Vikas Patidar</div>
+              <div class="text-xs text-slate-500">Weekend Fast-Track Batch • Sehore</div>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 font-bold text-xs flex items-center justify-center">
+              VP
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 6: BHEL Township -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex text-amber-400">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <span class="text-[11px] font-mono text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded">Verified Alumni</span>
+          </div>
+          <p class="text-sm text-slate-700 leading-relaxed italic">
+            "100% genuine hands-on institute. They don't just lecture on whiteboards like traditional diploma colleges. You sit at a test bench with an oscilloscope from Day 1. Highly recommended for any serious technician."
+          </p>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <div class="text-sm font-bold text-slate-900">Gaurav Saxena</div>
+              <div class="text-xs text-slate-500">Network &amp; Security • Govindpura / BHEL</div>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-700 font-bold text-xs flex items-center justify-center">
+              GS
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 9. 2-STEP DEMO CLASS ENROLLMENT WIZARD (With Visual Confirmation Modal)  -->
+  <!-- ========================================================================= -->
+  <section id="demoWizard" class="py-20 bg-gradient-to-br from-carbon-900 via-slate-900 to-carbon-950 text-white circuit-pattern">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center space-y-3 mb-10">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-400/20 text-amber-400 border border-amber-400/30 uppercase tracking-wider">
+          Zero Commitment • 100% Free
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Reserve Your 2-Day Free Practical Demo Seat
+        </h2>
+        <p class="text-slate-300 text-sm max-w-xl mx-auto">
+          Experience our live lab test bench in MP Nagar Zone-1. Work with oscilloscopes and BGA tools before paying any course fees.
+        </p>
+      </div>
+
+      <!-- Interactive Form Container -->
+      <div class="bg-carbon-800/90 border border-slate-700/80 rounded-2xl p-6 sm:p-10 shadow-2xl relative glow-cyan">
+        
+        <form id="enrollmentForm" onsubmit="handleBookingSubmit(event)" class="space-y-6">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <!-- Full Name -->
+            <div class="space-y-1.5">
+              <label for="studentName" class="text-xs font-bold text-slate-300 uppercase tracking-wider">Your Full Name *</label>
+              <div class="relative">
+                <input type="text" id="studentName" required placeholder="e.g. Aman Sharma" class="w-full bg-carbon-900 border border-slate-700 rounded-lg py-2.5 px-3.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-tech-400">
+              </div>
+            </div>
+
+            <!-- WhatsApp Number -->
+            <div class="space-y-1.5">
+              <label for="studentPhone" class="text-xs font-bold text-slate-300 uppercase tracking-wider">WhatsApp Contact Number *</label>
+              <div class="relative">
+                <input type="tel" id="studentPhone" required pattern="[0-9]{10}" placeholder="10-digit Mobile No." class="w-full bg-carbon-900 border border-slate-700 rounded-lg py-2.5 px-3.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-tech-400">
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <!-- Course Selection -->
+            <div class="space-y-1.5">
+              <label for="courseChoice" class="text-xs font-bold text-slate-300 uppercase tracking-wider">Preferred Specialization *</label>
+              <select id="courseChoice" required class="w-full bg-carbon-900 border border-slate-700 rounded-lg py-2.5 px-3.5 text-sm text-white focus:outline-none focus:border-tech-400">
+                <option value="Laptop Chip-Level Motherboard Engineering">Laptop Chip-Level Motherboard Engineering (₹18,000 – ₹28,000)</option>
+                <option value="Cisco CCNA (200-301) & Cloud Networking">Cisco CCNA (200-301) &amp; Cloud Networking (₹15,000 – ₹25,000)</option>
+                <option value="Advanced Smartphone & Micro-Soldering">Advanced Smartphone &amp; Micro-Soldering (₹12,000 – ₹20,000)</option>
+                <option value="Smart LED TV & SMPS Power Electronics">Smart LED TV &amp; SMPS Power Electronics (₹10,000 – ₹16,000)</option>
+                <option value="Linux Server & Network Security">Linux Server &amp; Network Security (₹14,000 – ₹22,000)</option>
+              </select>
+            </div>
+
+            <!-- Batch Timing -->
+            <div class="space-y-1.5">
+              <label for="batchTime" class="text-xs font-bold text-slate-300 uppercase tracking-wider">Preferred Batch Timing *</label>
+              <select id="batchTime" required class="w-full bg-carbon-900 border border-slate-700 rounded-lg py-2.5 px-3.5 text-sm text-white focus:outline-none focus:border-tech-400">
+                <option value="Morning Batch (09:00 AM – 11:30 AM)">Morning Batch (09:00 AM – 11:30 AM)</option>
+                <option value="Afternoon Batch (01:00 PM – 03:30 PM)">Afternoon Batch (01:00 PM – 03:30 PM)</option>
+                <option value="Evening Batch (05:00 PM – 07:30 PM)">Evening Batch (05:00 PM – 07:30 PM)</option>
+                <option value="Weekend Fast-Track (Sat & Sun Full Days)">Weekend Fast-Track (Sat &amp; Sun Full Days)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="w-full py-3.5 px-6 rounded-xl font-extrabold text-base text-carbon-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 hover:from-amber-300 hover:to-amber-400 shadow-xl transition transform active:scale-[0.99] flex items-center justify-center gap-2">
+              <i data-lucide="check-circle" class="w-5 h-5 text-carbon-950"></i>
+              <span>Confirm Demo Seat &amp; Generate WhatsApp Pass</span>
+            </button>
+            <p class="text-center text-xs text-slate-400 mt-2.5">
+              Instant confirmation sent via WhatsApp. Campus: Lajpat Bhawan, MP Nagar Zone-1.
+            </p>
+          </div>
+
+        </form>
+
+        <!-- Visual Confirmation Modal / Message Container (Required by QA) -->
+        <div id="confirmMsg" class="hidden mt-8 p-6 rounded-xl bg-carbon-950 border border-emerald-500/50 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+              <i data-lucide="check" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white">Demo Seat Reserved Successfully!</h4>
+              <p class="text-xs text-slate-300">Your details have been registered with the admissions desk.</p>
+            </div>
+          </div>
+          <div class="p-3.5 bg-carbon-900 rounded-lg border border-slate-800 text-xs text-slate-200" id="confirmDetails">
+            <!-- Dynamic Injection -->
+          </div>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a id="confirmWhatsappBtn" href="#" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 px-4 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider text-center transition flex items-center justify-center gap-2">
+              <i data-lucide="message-square" class="w-4 h-4"></i>
+              <span>Open in WhatsApp &amp; Confirm with Director</span>
+            </a>
+            <button type="button" onclick="resetBookingForm()" class="px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition">
+              Book Another Student
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 10. FAQS ACCORDION (With toggleFaq)                                      -->
+  <!-- ========================================================================= -->
+  <section id="faq" class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold text-tech-600 uppercase tracking-wider">Admissions Clarity</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-1">Frequently Asked Questions</h2>
+        <p class="text-slate-600 text-sm mt-1">Clear answers to help you choose the right course.</p>
+      </div>
+
+      <div class="space-y-3">
+        
+        <!-- FAQ 1 -->
+        <div class="border border-slate-200 rounded-xl bg-white overflow-hidden shadow-sm">
+          <button type="button" onclick="toggleFaq(1)" class="w-full py-4 px-5 text-left flex items-center justify-between font-bold text-sm text-slate-900 hover:text-tech-600 focus:outline-none">
+            <span>Do I need prior electronics or diploma knowledge to join?</span>
+            <i data-lucide="plus" id="faqIcon-1" class="w-4 h-4 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div id="faqAns-1" class="hidden px-5 pb-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            No prior engineering or IT diploma is required. Our curriculum starts from basic electricity fundamentals, resistor/capacitor/diode testing on breadboards, moving systematically into SMD components, schematic reading, and micro-soldering.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="border border-slate-200 rounded-xl bg-white overflow-hidden shadow-sm">
+          <button type="button" onclick="toggleFaq(2)" class="w-full py-4 px-5 text-left flex items-center justify-between font-bold text-sm text-slate-900 hover:text-tech-600 focus:outline-none">
+            <span>What equipment and test rigs will I practice on?</span>
+            <i data-lucide="plus" id="faqIcon-2" class="w-4 h-4 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div id="faqAns-2" class="hidden px-5 pb-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            You will train on digital storage oscilloscopes (DSOs), SMD rework stations (Quick 861DW), trinocular stereoscopic microscopes, DC regulated power supplies, RT809H BIOS programmers, and physical Cisco Catalyst switches and routers.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="border border-slate-200 rounded-xl bg-white overflow-hidden shadow-sm">
+          <button type="button" onclick="toggleFaq(3)" class="w-full py-4 px-5 text-left flex items-center justify-between font-bold text-sm text-slate-900 hover:text-tech-600 focus:outline-none">
+            <span>Do you offer job placement assistance and business startup guidance?</span>
+            <i data-lucide="plus" id="faqIcon-3" class="w-4 h-4 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div id="faqAns-3" class="hidden px-5 pb-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            Yes. We have placed over 10,000 alumni across MP, Maharashtra, and Gujarat with IT infrastructure providers, authorized service centers, and telecom operators. If you plan to start your own repair store, we connect you directly with wholesale parts vendors and tool importers.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="border border-slate-200 rounded-xl bg-white overflow-hidden shadow-sm">
+          <button type="button" onclick="toggleFaq(4)" class="w-full py-4 px-5 text-left flex items-center justify-between font-bold text-sm text-slate-900 hover:text-tech-600 focus:outline-none">
+            <span>Where is the institute located in Bhopal?</span>
+            <i data-lucide="plus" id="faqIcon-4" class="w-4 h-4 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div id="faqAns-4" class="hidden px-5 pb-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            We are situated at Plot No. 04, Lajpat Bhawan Building, Near HDFC Bank, Zone-1, M.P. Nagar, Bhopal. The campus is directly reachable by city bus from Habibganj (Rani Kamlapati) railway station, Indrapuri, and ISBT.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 11. 4-COLUMN TECHNICAL FOOTER WITH MULTI-CHANNEL LINKS                    -->
+  <!-- ========================================================================= -->
+  <footer class="bg-carbon-950 text-slate-400 pt-16 pb-28 sm:pb-16 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="space-y-4">
+          <img src="assets/rex-brand-logo-dark.svg" alt="Rex Institute of Technology Bhopal" class="h-12 w-auto max-w-[280px]">
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Pioneer institute for Chip-Level Hardware Engineering, Laptop Motherboard Diagnostics, Cisco CCNA Networking, and Smartphone Micro-Soldering in M.P. Nagar Zone-1, Bhopal.
+          </p>
+          <div class="text-xs text-slate-500 font-mono">
+            ISO 9001:2015 Certified • Estd. 2008
+          </div>
+        </div>
+
+        <!-- Col 2: High-Ticket Courses -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Specializations</h4>
+          <ul class="text-xs space-y-2">
+            <li><a href="#courses" class="hover:text-tech-400 transition">Laptop Chip-Level Motherboard (₹18k – ₹28k)</a></li>
+            <li><a href="#courses" class="hover:text-tech-400 transition">Cisco CCNA 200-301 Track (₹15k – ₹25k)</a></li>
+            <li><a href="#courses" class="hover:text-tech-400 transition">Smartphone Micro-Soldering (₹12k – ₹20k)</a></li>
+            <li><a href="#courses" class="hover:text-tech-400 transition">Smart TV &amp; Power SMPS (₹10k – ₹16k)</a></li>
+            <li><a href="#courses" class="hover:text-tech-400 transition">Linux Server &amp; Cyber Essentials</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Direct Admissions Helpline & Directions -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Admissions Desk</h4>
+          <div class="text-xs space-y-2.5">
+            <div class="flex items-start gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-tech-400 shrink-0 mt-0.5"></i>
+              <div>
+                <div class="text-slate-300 font-bold">Director Helpline:</div>
+                <a href="tel:+919893266819" class="text-amber-400 font-bold hover:underline">+91 98932 66819</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-2">
+              <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <div>
+                <div class="text-slate-300 font-bold">WhatsApp Desk:</div>
+                <a href="https://wa.me/919893266819?text=Namaskar%20Director%20Rex%20Institute,%20I%20want%20to%20inquire%20about%20admissions." target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-emerald-400 transition">Chat with Course Director</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-rose-400 shrink-0 mt-0.5"></i>
+              <div>
+                <div class="text-slate-300 font-bold">Campus Address:</div>
+                <p class="text-slate-400">Plot No. 04, Lajpat Bhawan Building, Near HDFC Bank, Zone-1, M.P. Nagar, Bhopal, MP 462011</p>
+                <a href="https://maps.google.com/?q=Plot+No.+04,+Lajpat+Bhawan+Building,+Zone-1,+M.P.+Nagar,+Bhopal" target="_blank" rel="noopener noreferrer" class="text-tech-400 hover:underline block mt-1">Open in Google Maps &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 4: Timings & Outstation Commuters -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Hours &amp; Facilities</h4>
+          <div class="text-xs space-y-2 text-slate-400">
+            <div><strong class="text-slate-200">Mon – Sat:</strong> 08:30 AM – 08:00 PM</div>
+            <div><strong class="text-slate-200">Sunday:</strong> 10:00 AM – 04:00 PM (Doubt Sessions)</div>
+            <div class="pt-2">
+              <span class="inline-block px-2.5 py-1 rounded bg-carbon-900 border border-slate-800 text-[11px] text-amber-300">
+                🚆 5 Mins from Rani Kamlapati Station
+              </span>
+            </div>
+            <div class="pt-1">
+              <span class="inline-block px-2.5 py-1 rounded bg-carbon-900 border border-slate-800 text-[11px] text-tech-300">
+                🏠 Hostel &amp; PG Guidance for Outstation Students
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Bottom Strip -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div>
+          &copy; 2026 Rex Institute of Technology, Bhopal. All Rights Reserved.
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="https://maps.google.com/?q=Plot+No.+04,+Lajpat+Bhawan+Building,+Zone-1,+M.P.+Nagar,+Bhopal" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 transition">Google Maps</a>
+          <span>•</span>
+          <a href="https://wa.me/919893266819?text=Namaskar%20Rex%20Institute" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 transition">WhatsApp</a>
+          <span>•</span>
+          <a href="#demoWizard" class="hover:text-slate-300 transition">Free Demo Class</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- 12. FLOATING MOBILE QUICK-ACTION DOCK (sm:hidden)                         -->
+  <!-- ========================================================================= -->
+  <div class="fixed bottom-0 left-0 right-0 z-40 bg-carbon-950/95 backdrop-blur-md border-t border-slate-800 p-2.5 flex items-center justify-around sm:hidden">
+    <!-- Call -->
+    <a href="tel:+919893266819" class="flex flex-col items-center text-slate-300 hover:text-white transition">
+      <i data-lucide="phone" class="w-5 h-5 text-tech-400"></i>
+      <span class="text-[10px] font-bold mt-1">Call Helpline</span>
+    </a>
+    <!-- WhatsApp -->
+    <a href="https://wa.me/919893266819?text=Namaskar%20Rex%20Institute,%20I%20am%20inquiring%20about%20admissions." target="_blank" rel="noopener noreferrer" class="flex flex-col items-center text-slate-300 hover:text-white transition">
+      <i data-lucide="message-circle" class="w-5 h-5 text-emerald-400"></i>
+      <span class="text-[10px] font-bold mt-1">WhatsApp</span>
+    </a>
+    <!-- Demo Class -->
+    <a href="#demoWizard" class="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-amber-500 text-carbon-950 font-extrabold text-xs shadow">
+      <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+      <span>Demo Class</span>
+    </a>
+    <!-- Directions -->
+    <a href="https://maps.google.com/?q=Plot+No.+04,+Lajpat+Bhawan+Building,+Zone-1,+M.P.+Nagar,+Bhopal" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center text-slate-300 hover:text-white transition">
+      <i data-lucide="map-pin" class="w-5 h-5 text-rose-400"></i>
+      <span class="text-[10px] font-bold mt-1">MP Nagar</span>
+    </a>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 13. INTERACTIVE SYLLABUS MODAL (Required by openTipModal)                 -->
+  <!-- ========================================================================= -->
+  <div id="tipModal" class="hidden fixed inset-0 z-50 modal-backdrop items-center justify-center p-4">
+    <div class="bg-carbon-900 border border-slate-700 rounded-2xl max-w-lg w-full p-6 text-white space-y-4 shadow-2xl relative">
+      <button type="button" onclick="closeTipModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div>
+        <span id="tipModalTag" class="text-[10px] font-mono font-bold text-amber-400 uppercase tracking-wider bg-carbon-800 px-2 py-0.5 rounded border border-slate-700">SYLLABUS MODULE</span>
+        <h3 id="tipModalTitle" class="text-xl font-extrabold text-white mt-1.5">Course Syllabus Outline</h3>
+      </div>
+
+      <div id="tipModalBody" class="text-xs sm:text-sm text-slate-300 leading-relaxed space-y-2">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <div class="pt-3 border-t border-slate-800 flex flex-col sm:flex-row gap-2.5">
+        <a id="tipModalActionBtn" href="https://wa.me/919893266819?text=Namaskar%20Rex%20Institute,%20please%20send%20complete%20PDF%20curriculum." target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 px-4 rounded-lg bg-tech-600 hover:bg-tech-500 text-white font-bold text-xs uppercase tracking-wider text-center transition flex items-center justify-center gap-2">
+          <i data-lucide="download" class="w-4 h-4"></i>
+          <span>Request Complete PDF on WhatsApp</span>
+        </a>
+        <button type="button" onclick="closeTipModal()" class="py-2.5 px-4 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs transition">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 14. CORE INTERACTIVE JAVASCRIPT LOGIC                                     -->
+  <!-- ========================================================================= -->
+  <script>
+    // Initialize Lucide Icons
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      initCountdownBeacon();
+    });
+
+    // 1. Top 72-Hour First-Click Countdown Ribbon (localStorage Beacon)
+    function initCountdownBeacon() {
+      const STORAGE_KEY = 'rex_institute_countdown_start';
+      const DURATION_HOURS = 72;
+      const DURATION_MS = DURATION_HOURS * 60 * 60 * 1000;
+
+      let startTime = localStorage.getItem(STORAGE_KEY);
+      const now = new Date().getTime();
+
+      if (!startTime) {
+        startTime = now;
+        localStorage.setItem(STORAGE_KEY, startTime);
+      } else {
+        startTime = parseInt(startTime, 10);
+      }
+
+      function updateClock() {
+        const currentTime = new Date().getTime();
+        const elapsed = currentTime - startTime;
+        let remaining = DURATION_MS - (elapsed % DURATION_MS);
+
+        if (remaining < 0) remaining = DURATION_MS;
+
+        const hours = Math.floor(remaining / (1000 * 60 * 60));
+        const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+
+        const elH = document.getElementById('beaconHours');
+        const elM = document.getElementById('beaconMins');
+        const elS = document.getElementById('beaconSecs');
+
+        if (elH) elH.textContent = String(hours).padStart(2, '0');
+        if (elM) elM.textContent = String(minutes).padStart(2, '0');
+        if (elS) elS.textContent = String(seconds).padStart(2, '0');
+      }
+
+      updateClock();
+      setInterval(updateClock, 1000);
+    }
+
+    // 2. Mobile Drawer Controls
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+
+    if (mobileMenuBtn && mobileDrawer) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('hidden');
+      });
+    }
+
+    function closeMobileDrawer() {
+      if (mobileDrawer) {
+        mobileDrawer.classList.add('hidden');
+      }
+    }
+
+    // 3. Category Service Filter (filterServices)
+    function filterServices(category, btnElement) {
+      const cards = document.querySelectorAll('.service-card');
+      const tabs = document.querySelectorAll('.filter-tab');
+
+      // Update Tab Styles
+      tabs.forEach(tab => {
+        tab.classList.remove('bg-tech-600', 'text-white');
+        tab.classList.add('bg-slate-100', 'text-slate-700');
+      });
+      if (btnElement) {
+        btnElement.classList.remove('bg-slate-100', 'text-slate-700');
+        btnElement.classList.add('bg-tech-600', 'text-white');
+      }
+
+      // Filter Cards
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        if (category === 'all' || cardCat === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // 4. Interactive Syllabus Modal Logic (openTipModal)
+    function openTipModal(type) {
+      const modal = document.getElementById('tipModal');
+      const tag = document.getElementById('tipModalTag');
+      const title = document.getElementById('tipModalTitle');
+      const body = document.getElementById('tipModalBody');
+      const action = document.getElementById('tipModalActionBtn');
+
+      if (!modal) return;
+
+      if (type === 'laptop') {
+        tag.innerText = 'CHIP-LEVEL MOTHERBOARD SYLLABUS';
+        title.innerText = 'Laptop Motherboard Engineering (₹18k – ₹28k)';
+        body.innerHTML = `
+          <p><strong>Module 1:</strong> Architecture of Laptop Motherboards (Intel 10th-14th Gen, AMD Ryzen).</p>
+          <p><strong>Module 2:</strong> Power Sequences (Step-Down 3.3V/5V ALW, RAM VRM, VCORE, GFX).</p>
+          <p><strong>Module 3:</strong> Tracing with Board-Viewer &amp; DSO Oscilloscope (Frequency &amp; Data signals).</p>
+          <p><strong>Module 4:</strong> BGA Rework Station &amp; PCH/CPU Reballing methodology.</p>
+        `;
+        action.href = 'https://wa.me/919893266819?text=Namaskar%20Rex%20Institute,%20please%20send%20Laptop%20Motherboard%20Syllabus%20PDF.';
+      } else if (type === 'ccna') {
+        tag.innerText = 'CISCO 200-301 CCNA SYLLABUS';
+        title.innerText = 'Cisco CCNA & Cloud Networking (₹15k – ₹25k)';
+        body.innerHTML = `
+          <p><strong>Module 1:</strong> Network Fundamentals, IPv4/IPv6 Subnetting &amp; Cisco IOS CLI.</p>
+          <p><strong>Module 2:</strong> Routing Protocols (OSPFv2/v3, static routing, default routes).</p>
+          <p><strong>Module 3:</strong> Switching Technologies (VLAN, Trunking 802.1Q, STP, EtherChannel).</p>
+          <p><strong>Module 4:</strong> Enterprise Security, ACLs, NAT, Wireless LAN Controllers &amp; Automation.</p>
+        `;
+        action.href = 'https://wa.me/919893266819?text=Namaskar%20Rex%20Institute,%20please%20send%20Cisco%20CCNA%20Syllabus%20PDF.';
+      } else if (type === 'smartphone') {
+        tag.innerText = 'MICRO-SOLDERING SYLLABUS';
+        title.innerText = 'Advanced Smartphone & iPhone Lab (₹12k – ₹20k)';
+        body.innerHTML = `
+          <p><strong>Module 1:</strong> Trinocular microscope operation &amp; 0.01mm jumper wiring under solder mask.</p>
+          <p><strong>Module 2:</strong> Black/White pasted IC removal without damaging PCB pads.</p>
+          <p><strong>Module 3:</strong> CPU/eMMC/UFS reballing with precision stencils.</p>
+          <p><strong>Module 4:</strong> Dead boot repair, UFI/EasyJTAG box programming &amp; short killer tracing.</p>
+        `;
+        action.href = 'https://wa.me/919893266819?text=Namaskar%20Rex%20Institute,%20please%20send%20Smartphone%20Micro-Soldering%20Syllabus%20PDF.';
+      } else if (type === 'tv') {
+        tag.innerText = 'SMART TV & SMPS SYLLABUS';
+        title.innerText = 'Smart LED TV & Power Electronics (₹10k – ₹16k)';
+        body.innerHTML = `
+          <p><strong>Module 1:</strong> SMPS power supply troubleshooting, PFC circuits, inverter backlights.</p>
+          <p><strong>Module 2:</strong> T-Con board LVDS &amp; mini-LVDS signals, VGL/VGH voltage generators.</p>
+          <p><strong>Module 3:</strong> COF bonding panel repairs and panel bypass lines.</p>
+        `;
+        action.href = 'https://wa.me/919893266819?text=Namaskar%20Rex%20Institute,%20please%20send%20Smart%20TV%20Syllabus%20PDF.';
+      } else {
+        tag.innerText = 'REX INSTITUTE SYLLABUS';
+        title.innerText = 'Technical Course Curriculum';
+        body.innerHTML = '<p>Complete hands-on breakdown with test bench equipment specifications.</p>';
+        action.href = 'https://wa.me/919893266819?text=Namaskar%20Rex%20Institute,%20please%20send%20Course%20Information.';
+      }
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeTipModal() {
+      const modal = document.getElementById('tipModal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    // 5. FAQ Accordion (toggleFaq)
+    function toggleFaq(index) {
+      const ans = document.getElementById(`faqAns-${index}`);
+      const icon = document.getElementById(`faqIcon-${index}`);
+
+      if (!ans) return;
+
+      const isHidden = ans.classList.contains('hidden');
+
+      // Close all other FAQs
+      for (let i = 1; i <= 4; i++) {
+        const otherAns = document.getElementById(`faqAns-${i}`);
+        const otherIcon = document.getElementById(`faqIcon-${i}`);
+        if (otherAns && i !== index) {
+          otherAns.classList.add('hidden');
+          if (otherIcon) {
+            otherIcon.setAttribute('data-lucide', 'plus');
+          }
+        }
+      }
+
+      if (isHidden) {
+        ans.classList.remove('hidden');
+        if (icon) icon.setAttribute('data-lucide', 'minus');
+      } else {
+        ans.classList.add('hidden');
+        if (icon) icon.setAttribute('data-lucide', 'plus');
+      }
+      lucide.createIcons();
+    }
+
+    // 6. 2-Step Demo Enrollment Submission & WhatsApp Dispatch (handleBookingSubmit & confirmMsg)
+    function handleBookingSubmit(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('studentName').value.trim();
+      const phone = document.getElementById('studentPhone').value.trim();
+      const course = document.getElementById('courseChoice').value;
+      const batch = document.getElementById('batchTime').value;
+
+      const confirmMsg = document.getElementById('confirmMsg');
+      const confirmDetails = document.getElementById('confirmDetails');
+      const confirmBtn = document.getElementById('confirmWhatsappBtn');
+
+      const messageText = `Namaskar Director Rex Institute Bhopal,
+I would like to reserve a 2-Day Free Practical Demo Class:
+• Student Name: ${name}
+• WhatsApp Contact: ${phone}
+• Specialization: ${course}
+• Preferred Batch: ${batch}
+• Campus: Lajpat Bhawan, MP Nagar Zone-1
+
+Please confirm my test bench workstation reservation.`;
+
+      const encoded = encodeURIComponent(messageText);
+      const waUrl = `https://wa.me/919893266819?text=${encoded}`;
+
+      if (confirmDetails) {
+        confirmDetails.innerHTML = `
+          <div><strong>Candidate:</strong> ${name} (<a href="tel:${phone}" class="text-amber-400 font-bold">${phone}</a>)</div>
+          <div class="mt-1"><strong>Selected Track:</strong> ${course}</div>
+          <div class="mt-1"><strong>Batch Timing:</strong> ${batch}</div>
+          <div class="mt-1 text-emerald-400 font-semibold">✓ Test Bench Reserved at Lajpat Bhawan, MP Nagar Zone-1.</div>
+        `;
+      }
+
+      if (confirmBtn) {
+        confirmBtn.href = waUrl;
+      }
+
+      if (confirmMsg) {
+        confirmMsg.classList.remove('hidden');
+        confirmMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function resetBookingForm() {
+      const confirmMsg = document.getElementById('confirmMsg');
+      const form = document.getElementById('enrollmentForm');
+      if (confirmMsg) confirmMsg.classList.add('hidden');
+      if (form) form.reset();
+    }
+  </script>
+
+
+<!-- ========================================== -->
+<!-- NEXG AI CONCIERGE & BOOKING ENGINE (RULE 6) -->
+<!-- ========================================== -->
+<div id="ai-concierge-root" class="fixed bottom-6 right-6 z-50 font-sans">
+  <!-- Launcher Button -->
+  <button id="ai-concierge-toggle" aria-label="Open AI Concierge" class="relative group flex items-center gap-3 bg-stone-900 hover:bg-stone-800 text-white pl-4 pr-5 py-3 rounded-full shadow-2xl border border-amber-500/40 hover:border-amber-400 transition-all duration-300 transform hover:scale-105">
+    <span class="relative flex h-3 w-3">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
+    </span>
+    <div class="flex items-center gap-2">
+      <svg class="w-5 h-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+      </svg>
+      <span class="text-xs font-bold tracking-wide text-amber-300 group-hover:text-amber-200">AI Concierge &amp; Booking</span>
+    </div>
+  </button>
+
+  <!-- Interactive Modal / Chat Window -->
+  <div id="ai-concierge-window" class="hidden absolute bottom-16 right-0 w-[360px] sm:w-[410px] max-h-[580px] bg-stone-950 text-stone-100 rounded-2xl shadow-2xl border border-stone-800 flex flex-col overflow-hidden backdrop-blur-xl animate-fade-in">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-stone-900 via-stone-900 to-stone-950 p-4 border-b border-stone-800 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white tracking-wide">Rex Institute AI Counselor</h4>
+          <p class="text-[10px] text-amber-400/90 flex items-center gap-1.5 font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> IT Hardware, Networking & Career Admissions
+          </p>
+        </div>
+      </div>
+      <button id="ai-concierge-close" class="text-stone-400 hover:text-white p-1 rounded-lg hover:bg-stone-800 transition-colors" aria-label="Close Assistant">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Messages Container -->
+    <div id="ai-concierge-messages" class="flex-1 overflow-y-auto p-4 space-y-3 text-xs leading-relaxed max-h-[360px]">
+      <div class="flex items-start gap-2.5">
+        <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 mt-0.5 text-[11px] font-bold">AI</div>
+        <div class="bg-stone-900 border border-stone-800 p-3 rounded-2xl rounded-tl-sm text-stone-200">
+          Welcome to Rex Institute of Technology. I am your AI Admissions Counselor. Explore hardware engineering, CCNA, and IT careers with us!
+        </div>
+      </div>
+
+      <!-- Quick Action Pills -->
+      <div class="pt-2">
+        <p class="text-[10px] uppercase font-bold text-stone-400 tracking-wider mb-2">Quick Inquiries</p>
+        <div class="flex flex-wrap gap-1.5" id="ai-concierge-pills">
+          <button type="button" class="ai-prompt-pill text-[11px] font-medium bg-stone-900 hover:bg-stone-800 text-stone-300 hover:text-amber-300 border border-stone-800 hover:border-amber-500/40 px-2.5 py-1 rounded-full transition-colors" data-query="What is the duration, syllabus, and fee for Hardware & Networking Diploma?">💻 Diploma in Hardware & Net</button><button type="button" class="ai-prompt-pill text-[11px] font-medium bg-stone-900 hover:bg-stone-800 text-stone-300 hover:text-amber-300 border border-stone-800 hover:border-amber-500/40 px-2.5 py-1 rounded-full transition-colors" data-query="Tell me about CCNA routing & Windows Server administration tracks.">🌐 CCNA & Server Admin</button><button type="button" class="ai-prompt-pill text-[11px] font-medium bg-stone-900 hover:bg-stone-800 text-stone-300 hover:text-amber-300 border border-stone-800 hover:border-amber-500/40 px-2.5 py-1 rounded-full transition-colors" data-query="What placement assistance and company tie-ups do you provide?">💼 100% Job Placement</button><button type="button" class="ai-prompt-pill text-[11px] font-medium bg-stone-900 hover:bg-stone-800 text-stone-300 hover:text-amber-300 border border-stone-800 hover:border-amber-500/40 px-2.5 py-1 rounded-full transition-colors" data-query="How do I register for a free practical lab demo class?">📝 Book Free Demo Class</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Direct WhatsApp Action Banner -->
+    <div class="px-4 py-2 bg-stone-900/80 border-t border-stone-800/80 flex items-center justify-between">
+      <span class="text-[11px] text-stone-400">Ready to speak with the desk?</span>
+      <a id="ai-concierge-wa-link" href="https://wa.me/919893266819?text=Namaskar,%20I%20have%20an%20inquiry%20from%20the%20website." target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-lg transition-all shadow-md">
+        <span>WhatsApp</span>
+        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+      </a>
+    </div>
+
+    <!-- Input Footer -->
+    <div class="p-3 bg-stone-950 border-t border-stone-800 flex items-center gap-2">
+      <input id="ai-concierge-input" type="text" placeholder="Ask about services, pricing, bookings..." class="flex-1 bg-stone-900 border border-stone-800 text-stone-100 placeholder-stone-500 text-xs px-3.5 py-2.5 rounded-xl focus:outline-none focus:border-amber-400">
+      <button id="ai-concierge-send" aria-label="Send Message" class="bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold p-2.5 rounded-xl transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const profile = {"title": "Rex Institute AI Counselor", "subtitle": "IT Hardware, Networking & Career Admissions", "avatar": "assets/logo.svg", "theme_color": "blue", "primary_phone": "919893266819", "greeting": "Welcome to Rex Institute of Technology. I am your AI Admissions Counselor. Explore hardware engineering, CCNA, and IT careers with us!", "quick_pills": [{"label": "\ud83d\udcbb Diploma in Hardware & Net", "query": "What is the duration, syllabus, and fee for Hardware & Networking Diploma?"}, {"label": "\ud83c\udf10 CCNA & Server Admin", "query": "Tell me about CCNA routing & Windows Server administration tracks."}, {"label": "\ud83d\udcbc 100% Job Placement", "query": "What placement assistance and company tie-ups do you provide?"}, {"label": "\ud83d\udcdd Book Free Demo Class", "query": "How do I register for a free practical lab demo class?"}], "faqs": [{"keywords": ["diploma", "hardware", "networking", "syllabus", "duration", "fee"], "answer": "Our Master Diploma in Hardware & Network Engineering spans 6 months of 100% hands-on lab training covering PC architecture, troubleshooting, structured cabling, routing, and switches. Installment fee plans available."}, {"keywords": ["ccna", "server", "cisco", "cloud"], "answer": "We prepare students for Cisco CCNA 200-301 and Microsoft Server certification with physical Cisco routers and manageable switches in our dedicated Bhopal lab."}, {"keywords": ["placement", "job", "salary", "career"], "answer": "Over 2,500+ Rex alumni are employed across MNCs and enterprise IT departments with starting packages from \u20b92.4 LPA to \u20b94.5 LPA. Dedicated placement cell provides interview prep and mock tests."}, {"keywords": ["demo", "admission", "register", "class"], "answer": "Experience our training methodology firsthand! Tap 'Proceed to WhatsApp' to reserve your seat in the upcoming Saturday lab demo."}]};
+  const toggleBtn = document.getElementById('ai-concierge-toggle');
+  const closeBtn = document.getElementById('ai-concierge-close');
+  const chatWindow = document.getElementById('ai-concierge-window');
+  const messagesBox = document.getElementById('ai-concierge-messages');
+  const inputField = document.getElementById('ai-concierge-input');
+  const sendBtn = document.getElementById('ai-concierge-send');
+  const waLink = document.getElementById('ai-concierge-wa-link');
+
+  if (!toggleBtn || !chatWindow) return;
+
+  function toggleChat() {
+    chatWindow.classList.toggle('hidden');
+    if (!chatWindow.classList.contains('hidden')) {
+      inputField.focus();
+    }
+  }
+
+  toggleBtn.addEventListener('click', toggleChat);
+  closeBtn.addEventListener('click', toggleChat);
+
+  function appendUserMessage(text) {
+    const row = document.createElement('div');
+    row.className = 'flex items-start justify-end gap-2.5';
+    row.innerHTML = '<div class="bg-amber-500/10 border border-amber-500/30 text-amber-200 p-3 rounded-2xl rounded-tr-sm">' + escapeHtml(text) + '</div>';
+    messagesBox.appendChild(row);
+    messagesBox.scrollTop = messagesBox.scrollHeight;
+  }
+
+  function appendBotMessage(text, suggestWa = false) {
+    const row = document.createElement('div');
+    row.className = 'flex items-start gap-2.5';
+    let waHtml = '';
+    if (suggestWa) {
+      const enc = encodeURIComponent("Namaskar, I inquired: " + text.slice(0, 80));
+      waHtml = '<div class="mt-2.5 pt-2 border-t border-stone-800"><a href="https://wa.me/' + profile.primary_phone + '?text=' + enc + '" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-emerald-400 hover:underline">Confirm on WhatsApp ↗</a></div>';
+    }
+    row.innerHTML = '<div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 mt-0.5 text-[11px] font-bold">AI</div><div class="bg-stone-900 border border-stone-800 p-3 rounded-2xl rounded-tl-sm text-stone-200 whitespace-pre-line">' + escapeHtml(text) + waHtml + '</div>';
+    messagesBox.appendChild(row);
+    messagesBox.scrollTop = messagesBox.scrollHeight;
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/[&<>"']/g, function(m) {
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];
+    });
+  }
+
+  function findAnswer(query) {
+    const q = query.toLowerCase();
+    for (let f of profile.faqs) {
+      for (let k of f.keywords) {
+        if (q.includes(k.toLowerCase())) {
+          return f.answer;
+        }
+      }
+    }
+    return "Thank you for asking! For custom requirements, exact timing slots, or tailored service quotes, our dedicated front desk is available right now via WhatsApp.";
+  }
+
+  function handleSend(userText) {
+    const text = userText || inputField.value.trim();
+    if (!text) return;
+    appendUserMessage(text);
+    if (!userText) inputField.value = '';
+
+    const answer = findAnswer(text);
+    setTimeout(() => {
+      appendBotMessage(answer, true);
+      waLink.href = 'https://wa.me/' + profile.primary_phone + '?text=' + encodeURIComponent('Namaskar! Regarding: ' + text);
+    }, 400);
+  }
+
+  sendBtn.addEventListener('click', () => handleSend());
+  inputField.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') handleSend();
+  });
+
+  document.querySelectorAll('.ai-prompt-pill').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const q = this.getAttribute('data-query');
+      handleSend(q);
+    });
+  });
+})();
+</script>
+<!-- END NEXG AI CONCIERGE -->
+
+</body>
+</html>
